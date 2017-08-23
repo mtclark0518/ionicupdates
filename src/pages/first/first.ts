@@ -37,7 +37,7 @@ export class TylerPage implements OnInit {
   
   ngOnInit() {
     this.apiObservable = this.searchSubject
-    .debounceTime(500)
+    .debounceTime(250)
     .distinctUntilChanged()
     .switchMap(name => this.firstProvider.createAPIObservable(name));
 
