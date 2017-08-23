@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Fuckin' Form Yo
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-title>My Pokemon</ion-title>
+
+    <form (ngSubmit)="addPoke(pokemon)">
+        <ion-item>
+            <ion-label>Poke Name: </ion-label>
+            <ion-input type="text" [(ngModel)]="pokemon.name" name="name"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Type: </ion-label>
+            <ion-textarea [(ngModel)]="pokemon.type" name="type"></ion-textarea>
+        </ion-item>
+        <button ion-button type="submit" block>Add Pokemon</button>
+    </form>
+
+
+    <ul class="pokemons">
+        <li *ngFor="let pokemon of pokemons">
+            <span class="badge">{{pokemon.name}}</span> {{pokemon.name}}
+        </li>
+    </ul>
+</ion-content>
